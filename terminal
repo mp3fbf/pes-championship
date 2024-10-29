@@ -1,0 +1,11 @@
+npx create-next-app@latest pes-championship --typescript --tailwind --eslint
+cd pes-championship
+npm install @clerk/nextjs @supabase/supabase-js drizzle-orm @shadcn/ui framer-motion
+npm install drizzle-kit pg @types/pg
+npm install dotenv
+npm install postgres
+npm install --save-dev @types/node @types/react @types/react-dom
+npx shadcn-ui@latest init
+npx shadcn-ui@latest add card badge dialog button input select toast
+npm run db:generate
+npm run db:push
