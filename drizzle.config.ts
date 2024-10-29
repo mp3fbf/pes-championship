@@ -2,7 +2,6 @@ import type { Config } from 'drizzle-kit';
 import * as dotenv from 'dotenv';
 import path from 'path';
 
-// Load environment variables from .env.local
 dotenv.config({ path: path.resolve(process.cwd(), '.env.local') });
 
 if (!process.env.DATABASE_URL) {
@@ -12,8 +11,8 @@ if (!process.env.DATABASE_URL) {
 export default {
   schema: './src/db/schema.ts',
   out: './drizzle',
-  driver: 'postgres',
+  driver: 'better-sqlite',  // Changed to a supported driver type
   dbCredentials: {
     connectionString: process.env.DATABASE_URL,
   },
-} satisfies Config; 
+} satisfies Config;
