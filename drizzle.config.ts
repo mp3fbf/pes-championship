@@ -11,8 +11,8 @@ if (!process.env.DATABASE_URL) {
 export default {
   schema: './src/db/schema.ts',
   out: './drizzle',
-  driver: 'better-sqlite',  // Changed to a supported driver type
+  dialect: 'postgresql',  // Changed from 'driver: pg'
   dbCredentials: {
-    connectionString: process.env.DATABASE_URL,
+    url: process.env.DATABASE_URL  // Changed from connectionString
   },
 } satisfies Config;
